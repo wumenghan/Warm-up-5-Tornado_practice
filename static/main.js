@@ -1,6 +1,7 @@
 // Let user to be either A or B
-var player_list = ['A','B'];
-//var play = player_list[Math.floor.(Math.random() * player_list.length)];
+var player_list = ['0','A','B'];
+var play = player_list[Math.floor(Math.random() * 2)+1];
+console.log(play);
 // Global variable
 var g_a_seen = 0;
 var g_b_seen = 0;
@@ -11,14 +12,39 @@ jQuery(document).ready(function(){
 	$("#message_b").on("keypress",B_player_handler);
 	$("#message_a").on("keypress",CompareHandler);
 	$("#message_b").on("keypress",CompareHandler);
-
+	player_handler();
 	poll_A();
 	poll_B();
 	CompareHandler();
 	poll_compare();
-
+	countdown_handler();
 
 });
+function countdown_handler(){
+	
+
+
+}
+
+function player_handler(){
+		//player a , hide player B, and alert "you are player a"
+		if(play == 'A'){
+			alert("You are player A");
+			hide = document.getElementById("player_b");
+			hide.style.display = "none";
+
+		}
+		//player b, hide player a, and alert "you are player b"
+		else{
+			alert("You are player B");
+			hide = document.getElementById("player_a");
+			hide.style.display = "none";
+			
+		}
+
+}
+
+
 
 function A_player_handler(evt){
 	
@@ -113,7 +139,7 @@ function CompareHandler(){
 	$.ajax({
 		url:"/compare",
 		type:"POST",
-		success:alert("compare success")
+		success:console.log("success")
 	
 	
 	});

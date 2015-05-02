@@ -9,33 +9,34 @@
 		<script type="text/javascript" src="./static/main.js"></script>
 	</head>
 	<body>
-		<div id="instructions">
+		<div id="scores">Scores:<input type="text" id="correct_value"></div>
+		</div>
+
+		<div id = "instructions">
+		<h1> Instructions</h1>
 		<ul>
 			<li>This is a simple ESP game</li>
-			<li>You will login as either Player A or Player b</li>
-			<li>There are five pictures, you will have 30 secs for each</li>
+			<li>You will login as either Player A or Player B</li>
 			<li>Please label the picture, you will score if you and your partner's label is the same</li>
 		</ul>
 		</div>
-		
-		<div id="image_container">
-			<img src="./static/image/">
-		</div>
-		
-		
+		<div id="player_a">	
+		Player A type here:<input id="message_a" type="text">
 		<div id="message_a_display" >
 		</div>
-		<input id="message_a" type="text">
-
-			
+		</div>
+		
+		<div id="player_b">
+		Player B type here:<input id="message_b" type="text">
 		<div id="message_b_display">
 		</div>
-		<input id="message_b" type="text">
-		
+		</div>
 		<div id="correct_display">
-			<input type="text" id="correct_value">
-		<div>
-
+	
+		<div id="image_container">
+			<img src="./static/images/family.jpg" width="575px">
+		</div>
+				
 	</body>
 	
 

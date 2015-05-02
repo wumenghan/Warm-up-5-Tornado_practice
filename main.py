@@ -91,19 +91,13 @@ class CompareHandler(tornado.web.RequestHandler):
 		length_a = len(g_a_list)
 		length_b = len(g_b_list)
 		if self.check_a_b(g_a_list,g_b_list):
-			if g_a_list[length_a-1] == g_b_list[length_b-1]:
-				# send something back to browser and clear the list
-				g_correct = g_correct + 1
-				print g_a_list
-				print g_b_list
-				print g_correct
-				del g_a_list[:]
-				del g_b_list[:]
-				
-			else:
-				# list keep on and nothing happen
-				print"nothing"
-		
+			for x in g_a_list:
+				for y in g_b_list:
+					if x == y:
+						g_correct = g_correct + 1
+						g_a_list.remove(x)
+						g_b_list.remove(y)
+
 		for future in g_correct_waiters:
 			
 			future.set_result(g_correct)

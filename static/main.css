@@ -1,0 +1,30 @@
+#instructions{
+	margin: 0px auto;
+	width:50%;
+}
+
+#image_container{
+	margin: 0px auto;
+	width:50%;
+	
+}
+
+#player_a{
+	float:left;
+}
+
+#player_b{
+	float:right;
+}
+
+#correct_value{
+	width: 20px;
+	border:thin;
+	font-size:30px;
+}
+#scores{
+	float:left;
+	font-size:30px;
+	margin-left: 100px;
+	margin-top: 50px;
+}
